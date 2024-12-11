@@ -1,0 +1,4 @@
+(executable
+ (name gen_keysyms)
+ (modules gen_keysyms)
+ (libraries xkbcommon))

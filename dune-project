@@ -1,0 +1,18 @@
+(lang dune 3.10)
+(name xkbcommon)
+(formatting disabled)
+(subst disabled)
+(generate_opam_files true)
+(source (github talex5/xkbcommon))
+(license "Apache-2.0")
+(authors "Thomas Leonard")
+(maintainers "talex5@gmail.com")
+(documentation "https://talex5.github.io/xkbcommon")
+(package
+ (name xkbcommon)
+ (synopsis "OCaml bindings to libxkbcommon")
+ (depends
+  (ocaml (>= 4.14.0))
+  (conf-xkbcommon (>= 1))
+  (dune-configurator (>= 3.10.0))
+  (alcotest (and (>= 1.8.0) :with-test))))

@@ -1,0 +1,19 @@
+(library
+ (name xkbcommon)
+ (public_name xkbcommon)
+ (libraries unix)
+ (modules xkbcommon keysyms)
+ (c_library_flags :standard (:include xkbcommon-clibs.sexp))
+ (foreign_stubs
+  (language c)
+  (flags :standard (:include xkbcommon-cflags.sexp))
+  (names xkbcommon_stubs)))
+
+(executable
+ (name discover)
+ (modules discover)
+ (libraries dune-configurator))
+
+(rule
+ (targets xkbcommon-clibs.sexp xkbcommon-cflags.sexp)
+ (action (run ./discover.exe)))
